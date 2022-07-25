@@ -1,0 +1,58 @@
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Pinball Display</title>
+    <script type="text/javascript" src="segment-display.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <style>
+    #myContainer {
+      width: 400px;
+      height: 50px;
+      position: relative;
+      background: yellow;
+    }
+    #animation_1 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: red;
+    }
+    </style>
+
+  <body>
+    <audio id="buzz_1">
+        <source src="sounds/buzz_1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="buzz_2">
+        <source src="sounds/buzz_2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bip">
+        <source src="sounds/bip.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="terminator">
+        <source src="sounds/terminator.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="playSound(0)" type="button">buzz 1</button>
+    <button onclick="playSound(1)" type="button">buzz 2</button> 
+    <button onclick="playSound(2)" type="button">bip</button> 
+    <button onclick="playSound(3)" type="button">Terminator</button>
+    <button onclick="play_animation1()" type="button">animation1</button>
+    <div id="myContainer">
+        <div id="animation_1"></div>
+    </div>
+
+    <div style="padding: 50px 100px">
+      <div style="width: 216px; height: 126px; position: relative; background: transparent no-repeat top left">
+        <div style="position: absolute; left: 38px; top: 33px; width: 240px; height: 64px">
+          <canvas id="display" width="240" height="68"></canvas>
+        </div>
+      </div>
+    </div>
+    <script>
+        initPinball();
+    </script>
+  </body>
+
+</html>
